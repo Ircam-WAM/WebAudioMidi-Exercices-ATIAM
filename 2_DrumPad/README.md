@@ -38,11 +38,12 @@ Le but de cet exercice est de controller des paramètres et flux Web Audio à l'
 
 ### Web Midi
 
-https://www.w3.org/TR/webmidi/
+http://webaudio.github.io/web-midi-api/
 
 ### Web Audio
 
-https://www.w3.org/TR/webaudio/
+https://developer.mozilla.org/fr/docs/Web/API/Web_Audio_API
+https://webaudio.github.io/web-audio-api/
 
 ### MIDI commands
 
