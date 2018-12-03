@@ -2,7 +2,7 @@
 
 Qu'est-ce qu'un Kaoss Pad :
 
-![Kaoss Pad](https://commons.wikimedia.org/wiki/File:KAOSS_PAD.JPG?uselang=fr)
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/KAOSS_PAD.JPG" alt="Kaoss Pad" width="40%" height="40%">
 
 > The Korg Kaoss Pad is a small touchpad MIDI controller, sampler, and effects processor for audio and musical instruments.
 
