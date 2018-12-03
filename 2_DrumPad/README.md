@@ -7,6 +7,7 @@ Le but de cet exercice est de controller des paramètres et flux Web Audio à l'
 ### Prérequis
 
 - Utiliser le navigateur Chrome / Chromium
+- Dans Chrome / Chromium, saissez l'adresse : chrome://flags/ et activer 'Experimental JavaScript' (#enable-javascript-harmony)
 - Avoir python d'installé
 - A la racine du dossier de l'exercice, lancer un serveur web local :
     - ```python -m SimpleHTTPServer 8001``` (python 2)
