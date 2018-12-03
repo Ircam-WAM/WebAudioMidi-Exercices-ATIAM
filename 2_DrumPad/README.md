@@ -60,7 +60,7 @@ https://www.nyu.edu/classes/bello/FMT_files/9_MIDI_code.pdf
 
 ### Samples Audio 
 
-http://www.electrogroove.fr
+https://www.electrogroove.fr
 
 
 ## Aller plus loin
