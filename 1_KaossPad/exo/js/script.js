@@ -1,23 +1,21 @@
-// declare frequency max
+// 1. declare frequency max
 
-// use microphone as audio input
+// 2. use microphone as audio input
 
-// declare ping pong delay
+// 3. declare ping pong delay
 
-// declare low pass filter
+// 4. declare low pass filter
 
-// declare high pass filter
+// 5. declare high pass filter
 
-// add effect to microphone source
+// 6. add effect to microphone source
 
-// play event listener
+// 7. play event listener
 
-// stop event listener
+// 8. stop event listener
 
-// on mouse move, vary effects parameters functions of X / Y mouse position
-    
-    // vary ping pong delay on X axis
+// 9. vary ping pong delay on X axis
 
-    // vary low pass filter on Y axis 
+// 10. vary low pass filter on Y axis 
 
-    // vary high pass filter on Y axis
+// 11. vary high pass filter on Y axis
