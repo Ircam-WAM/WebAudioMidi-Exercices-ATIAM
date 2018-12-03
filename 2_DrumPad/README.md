@@ -30,10 +30,6 @@ Le but de cet exercice est de controller des paramètres et flux Web Audio à l'
 10. Ajouter un filtre Biquad entre le noeud source et de destination
 11. Relier ce filtre à un "controller continue" (potentiomètre) de votre clavier
 
-### Questions 
-
-
-
 ## Sources
 
 ### Web Midi
@@ -69,6 +65,7 @@ http://www.electrogroove.fr
 ## Aller plus loin
 
 https://webaudiodemos.appspot.com/
+
 https://github.com/alemangui/web-audio-resources
 
 
