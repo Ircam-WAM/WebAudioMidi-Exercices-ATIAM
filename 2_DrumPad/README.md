@@ -26,7 +26,7 @@ Le but de cet exercice est de controller des paramètres et flux Web Audio à l'
 6. Afficher dans la console les messages Midi de votre controller
 7. En utilisant la class ```BufferLoader``` du fichier ```script.js```, instancier les samples de batterie (dossier ```samples```) en tant que source Web Audio
 8. Remplir la méthode ```playSound``` qui permettra de jouer un sample bufferisé (source), à connecter à un noeud de destination audio
-9. Déclencher les samples de batterie à partir de notes Midi que vous aurez choisies
+9. Déclencher les samples de batterie à partir de notes Midi que vous aurez choisis
 10. Ajouter un filtre Biquad entre le noeud source et de destination
 11. Relier ce filtre à un "controller continue" (potentiomètre) de votre clavier
 
