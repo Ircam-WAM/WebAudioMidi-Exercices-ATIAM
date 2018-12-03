@@ -7,6 +7,7 @@ Le but de cet exercice est de controller des paramètres et flux Web Audio à l'
 ### Prérequis
 
 - Utiliser le navigateur Chrome / Chromium
+- Dans Chrome / Chromium, saissez l'adresse : chrome://flags/ et activer 'Experimental JavaScript' (#enable-javascript-harmony)
 - Avoir python d'installé
 - A la racine du dossier de l'exercice, lancer un serveur web local :
     - ```python -m SimpleHTTPServer 8001``` (python 2)
@@ -29,19 +30,17 @@ Le but de cet exercice est de controller des paramètres et flux Web Audio à l'
 10. Ajouter un filtre Biquad entre le noeud source et de destination
 11. Relier ce filtre à un "controller continue" (potentiomètre) de votre clavier
 
-### Questions 
-
-
-
 ## Sources
 
 ### Web Midi
 
-https://www.w3.org/TR/webmidi/
+http://webaudio.github.io/web-midi-api/
 
 ### Web Audio
 
-https://www.w3.org/TR/webaudio/
+https://developer.mozilla.org/fr/docs/Web/API/Web_Audio_API
+
+https://webaudio.github.io/web-audio-api/
 
 ### MIDI commands
 
@@ -55,18 +54,22 @@ Program change | 0xC0 | Program number | -
 Channel aftertouch | 0xD0 | Pressure | -
 Pitch wheel | 0xE0 | LSbyte | MSbyte 
 
+http://www.opensound.com/pguide/midi/midi5.html
+
 https://ccrma.stanford.edu/~craig/articles/linuxmidi/misc/essenmidi.html
+
 https://www.nyu.edu/classes/bello/FMT_files/9_MIDI_code.pdf
 
 
 ### Samples Audio 
 
-http://www.electrogroove.fr
+https://www.electrogroove.fr
 
 
 ## Aller plus loin
 
 https://webaudiodemos.appspot.com/
+
 https://github.com/alemangui/web-audio-resources
 
 
