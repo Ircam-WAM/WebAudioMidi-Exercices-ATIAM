@@ -41,3 +41,7 @@ Qu'est-ce qu'un Kaoss Pad :
 
 https://en.wikipedia.org/wiki/Korg_Kaoss_Pad
 https://alemangui.github.io/pizzicato/
+
+## Aller plus loin
+
+https://tonejs.github.io/
