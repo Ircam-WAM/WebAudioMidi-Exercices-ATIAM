@@ -54,6 +54,7 @@ Program change | 0xC0 | Program number | -
 Channel aftertouch | 0xD0 | Pressure | -
 Pitch wheel | 0xE0 | LSbyte | MSbyte 
 
+http://www.opensound.com/pguide/midi/midi5.html
 https://ccrma.stanford.edu/~craig/articles/linuxmidi/misc/essenmidi.html
 https://www.nyu.edu/classes/bello/FMT_files/9_MIDI_code.pdf
 
