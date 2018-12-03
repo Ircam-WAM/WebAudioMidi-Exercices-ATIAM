@@ -44,16 +44,6 @@ https://webaudio.github.io/web-audio-api/
 
 ### MIDI commands
 
-Message | Status | Data 1 | Data 2
-------- | -------|-------|-------
-Note off | 0x80 | Note number | Velocity
-Note on | 0x90 | Note number | Velocity
-Polyphonic aftertouch | 0xA0 | Note number | Pressure
-Control change | 0xB0 | Controller number | Data
-Program change | 0xC0 | Program number | -
-Channel aftertouch | 0xD0 | Pressure | -
-Pitch wheel | 0xE0 | LSbyte | MSbyte 
-
 http://www.opensound.com/pguide/midi/midi5.html
 
 https://ccrma.stanford.edu/~craig/articles/linuxmidi/misc/essenmidi.html
