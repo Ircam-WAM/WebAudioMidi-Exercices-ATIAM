@@ -1,109 +1,108 @@
-let context = null // the Web Audio "context" object
-let midiAccess = null // the MIDIAccess object.
-let bufferLoader // buffer
-let filter // biquad filter
-let filterDefault // default value
-let freqMax = 18000 // frequency max
+let context = null; // the Web Audio "context" object
+let midiAccess = null; // the MIDIAccess object.
+let bufferLoader; // buffer
+let filter; // biquad filter
+let filterDefault = 5000; // default value
+let freqMax = 20000; // frequency max
 
 // when document is ready
 window.addEventListener('load', function () {
-  // Init Web Audio
-  // fill it !
+    // 1. Init AudioContext
+    // ...
 
-  // Init Web Midi
-  // fill it !
-})
+    // 2. Init Web Midi
+    // ...
+});
 
-function listInputsAndOutputs (inputs, outputs) {
-  if (inputs) {
-    for (let input of inputs.values()) {
-      console.log(`Fill it !`)
-    }
-  }
-  if (outputs) {
-    for (let output of outputs.values()) {
-      console.log(`Fill it !`)      
-    }
-  }
-}
-
-// Init Midi
+// 3. Midi callback is called if Midi is accessible
 function onMIDIInit (midi) {
-  console.log('MIDI ready!')
-
-  // fill it !
+    console.log('MIDI ready!');
+    // ...
 }
 
 // Reject Midi
 function onMIDIReject (err) {
-  console.log(`The MIDI system failed to start.  You're gonna have a bad time. ${err}`)
+    console.log(`The MIDI system failed to start.    You're gonna have a bad time. ${err}`);
 }
 
-// Handler which receive all Midi Messages
-function MIDIMessageEventHandler (event) {
-  // fill it !
+// 4. Event handler which receive all Midi Messages
+function midiMessageEventHandler (event) {
+    // ...
 }
 
+// 6. Add filter
 function continuousController (ctrlNumber, value) {
-  // fill it !
+    // ...
 }
 
+// 4. play sound when note on
 function noteOn (noteNumber, velocity) {
-  // fill it !
+    // ...
 }
 
 function noteOff (noteNumber) {
-  // fill it !
+    console.log('note off', noteNumber);
 }
 
 function finishedLoading (bufferList) {
-  console.log('Buffer loaded !')
+    console.log('Buffer loaded !');
 }
 
+// 5. Create Web Audio Graph
 function playSound (buffer) {
-  // fill it !
+    // ...
 }
 
-function BufferLoader (context, urlList, callback) {
-  this.context = context
-  this.urlList = urlList
-  this.onload = callback
-  this.bufferList = []
-  this.loadCount = 0
-}
+class BufferLoader {
+    context;
+    urlList;
+    onload;
+    bufferList = [];
+    loadCount = 0;
+  
+    constructor(context, urlList, callback) {
+        this.context = context;
+        this.urlList = urlList;
+        this.onload = callback;
+    }
+  
+    loadBuffer(url, index) {
+        // Load buffer asynchronously
+        let loader = this; // set loader
+        let request = new XMLHttpRequest(); // create asynchronous request
+        request.open('GET', url, true); // init request
+        request.responseType = 'arraybuffer'; // type of response: arraybuffer
+  
+        // success transaction = 200 from server
+        request.onload = function () {
+            // Asynchronously decode the audio file data contained in ArrayBuffer in request.response
+            // baseAudioContext.decodeAudioData(ArrayBuffer, successCallback, errorCallback);
+            loader.context.decodeAudioData(
+                request.response,
+                function (buffer) {
+                    if (!buffer) {
+                        console.log('error decoding file data: ' + url);
+                        return;
+                    }
+                    loader.bufferList[index] = buffer;
+                    if (++loader.loadCount === loader.urlList.length) { loader.onload(loader.bufferList); }
+                },
+                function (error) {
+                    console.error('decodeAudioData error', error);
+                }
+            );
+        };
+  
+        request.onerror = function () {
+            console.log('BufferLoader: XHR error');
+        };
 
-BufferLoader.prototype.loadBuffer = function (url, index) {
-  // Load buffer asynchronously
-  let request = new XMLHttpRequest() // eslint-disable-line no-undef
-  request.open('GET', url, true)
-  request.responseType = 'arraybuffer'
-  let loader = this
-
-  request.onload = function () {
-    // Asynchronously decode the audio file data in request.response
-    loader.context.decodeAudioData(
-      request.response,
-      function (buffer) {
-        if (!buffer) {
-          console.log('error decoding file data: ' + url)
-          return
-        }
-        loader.bufferList[index] = buffer
-        if (++loader.loadCount === loader.urlList.length) { loader.onload(loader.bufferList) }
-      },
-      function (error) {
-        console.error('decodeAudioData error', error)
-      }
-    )
-  }
-
-  request.onerror = function () {
-    console.log('BufferLoader: XHR error')
-  }
-
-  request.send()
-}
-
-BufferLoader.prototype.load = function () {
-  for (let i = 0; i < this.urlList.length; ++i) { this.loadBuffer(this.urlList[i], i) }
+        // send request to server
+        request.send();
+    };
+  
+    load() {
+        for (let i = 0; i < this.urlList.length; ++i) { this.loadBuffer(this.urlList[i], i); }
+    };
+  
 }
