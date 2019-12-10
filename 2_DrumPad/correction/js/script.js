@@ -36,6 +36,14 @@ window.addEventListener('load', function () {
     }
 });
 
+document.getElementById('button-resume').addEventListener('click', function() {
+    console.log('resume')
+    context.resume().then(() => {
+        console.log('Audio context resumed');
+    });
+});
+
+
 
 // 3. Midi callback is called if Midi is accessible
 function onMIDIInit (midi) {
