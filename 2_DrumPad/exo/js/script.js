@@ -5,6 +5,9 @@ let filter; // biquad filter
 let filterDefault = 5000; // default value
 let freqMax = 20000; // frequency max
 
+// 0. Resume audio context
+
+
 // when document is ready
 window.addEventListener('load', function () {
     // 1. Init AudioContext

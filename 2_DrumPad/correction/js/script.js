@@ -5,6 +5,14 @@ let filter; // biquad filter
 let filterDefault = 5000; // default value
 let freqMax = 20000; // frequency max
 
+// 0. Resume audio context
+document.getElementById('button-resume').addEventListener('click', function() {
+    console.log('resume')
+    context.resume().then(() => {
+        console.log('Audio context resumed');
+    });
+});
+
 // when document is ready
 window.addEventListener('load', function () {
     // 1. Init AudioContext
@@ -35,15 +43,6 @@ window.addEventListener('load', function () {
         console.log("No MIDI support present in your browser.    You're gonna have a bad time.");
     }
 });
-
-document.getElementById('button-resume').addEventListener('click', function() {
-    console.log('resume')
-    context.resume().then(() => {
-        console.log('Audio context resumed');
-    });
-});
-
-
 
 // 3. Midi callback is called if Midi is accessible
 function onMIDIInit (midi) {
