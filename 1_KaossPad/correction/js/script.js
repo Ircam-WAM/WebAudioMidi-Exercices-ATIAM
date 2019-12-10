@@ -1,8 +1,7 @@
-// 1. declare frequency max
-let freqMax = 20000
-
-// 2. use microphone as audio input
-let voice = new Pizzicato.Sound({ source: 'input' })
+// 1. declare variables
+let freqMax = 20000;
+let init = false;
+let voice;
 
 // 3. declare ping pong delay
 let pingPongDelay = new Pizzicato.Effects.PingPongDelay({
@@ -23,14 +22,21 @@ let highPassFilter = new Pizzicato.Effects.HighPassFilter({
     peak: 10
 });
 
-// 6. add effect to microphone source
-voice.addEffect(pingPongDelay);
-voice.addEffect(lowPassFilter);
-voice.addEffect(highPassFilter);
 
 // 7. play event listener
 document.getElementById('play-button').addEventListener('click', function (event) {
-    voice.play();
+
+        // 2. use microphone as audio input
+        Pizzicato.context.resume();
+        voice = new Pizzicato.Sound({ source: 'input' }, function(){
+            voice.play();
+
+            // 6. add effect to microphone source
+            voice.addEffect(pingPongDelay);
+            voice.addEffect(lowPassFilter);
+            voice.addEffect(highPassFilter);
+        })
+
 }, false);
 
 // 8. stop event listener
